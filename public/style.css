@@ -1,0 +1,168 @@
+/* Basic Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  background-color: #cbcbcb;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 10px;
+}
+
+/* Main container for the chatbot */
+.container {
+  width: 100%;
+  max-width: 600px;
+  height: 95vh;
+  max-height: 800px;
+  background-color: #ffffff;
+  border: 1px solid #d1d1d6;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 15px 20px;
+  text-align: center;
+  border-bottom: 1px solid #e5e5ea;
+  color: #1c1c1e;
+  background-color: #f9f9f9;
+}
+
+/* Chat message area */
+.chat-box {
+  flex-grow: 1;
+  padding: 20px 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Custom scrollbar for a modern look */
+.chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: #c7c7cc;
+  border-radius: 10px;
+}
+
+/* Individual message styling */
+.message {
+  padding: 10px 15px;
+  border-radius: 18px;
+  max-width: 75%;
+  line-height: 1.4;
+  word-wrap: break-word;
+  font-size: 0.95rem;
+}
+
+.user {
+  background-color: #007aff; /* iMessage blue */
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+  align-self: flex-end;
+  margin-right: 10px;
+}
+
+.bot {
+  background-color: #e5e5ea; /* iMessage grey */
+  color: #000000;
+  border-bottom-left-radius: 4px;
+  align-self: flex-start;
+  margin-left: 10px;
+}
+
+/* Special styling for the "thinking" indicator */
+.bot.thinking {
+  font-style: italic;
+  color: #8e8e93; /* A slightly darker grey for the thinking text */
+  background-color: #e5e5ea;
+}
+
+/* Special styling for the recording indicator */
+#mic-btn .stop-icon {
+  display: none;
+}
+
+#mic-btn.recording {
+  color: #ff3b30; /* A red color to indicate recording */
+  transform: scale(1.1);
+}
+
+#mic-btn.recording .mic-icon {
+  display: none;
+}
+
+#mic-btn.recording .stop-icon {
+  display: block;
+}
+
+/* Form and input styling */
+#chat-form {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-top: 1px solid #e5e5ea;
+  background-color: #f9f9f9;
+}
+
+#user-input {
+  flex-grow: 1;
+  border: 1px solid #d1d1d6;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 1rem;
+  outline: none;
+  margin-right: 10px;
+  transition: border-color 0.2s;
+}
+
+#user-input::placeholder {
+  color: #aeaeb2;
+}
+
+#user-input:focus {
+  border-color: #007aff;
+}
+
+#chat-form button {
+  background-color: transparent;
+  color: #007aff;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, transform 0.2s;
+}
+
+#chat-form button:hover {
+  color: #0056b3;
+}
+
+#chat-form button:active {
+  transform: scale(0.9);
+}
