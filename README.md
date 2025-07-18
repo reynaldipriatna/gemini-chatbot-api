@@ -7,7 +7,6 @@ A modern, interactive chatbot web application built with Node.js, Express, and V
 - **Real-time AI Responses:** Integrates with the Google Gemini API for intelligent and conversational replies.
 - **Modern UI:** Aesthetically pleasing iMessage-style chat interface.
 - **Voice-to-Text:** Use your microphone to speak your messages, which are transcribed into text using the browser's Web Speech API.
-- **Text-to-Speech:** The chatbot's replies are read aloud for a more engaging user experience.
 - **Intuitive Controls:** The microphone icon transforms into a stop icon during recording, providing clear visual feedback.
 - **User Feedback:** A "Gemini is thinking..." indicator lets the user know when the AI is processing a response.
 
