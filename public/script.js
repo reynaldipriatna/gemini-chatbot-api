@@ -76,9 +76,6 @@ form.addEventListener("submit", function (e) {
       // Update the "thinking" message with the actual reply
       thinkingMessage.classList.remove("thinking");
       thinkingMessage.textContent = data.reply;
-
-      // --- 3. Text to Speech (Read the reply aloud) ---
-      speak(data.reply);
     })
     .catch((error) => {
       console.error("Fetch Error:", error);
@@ -96,15 +93,4 @@ function appendMessage(sender, text) {
   chatBox.scrollTop = chatBox.scrollHeight;
   // Return the message element so we can update it later
   return msg;
-}
-
-// --- 2. Speech Synthesis (Text to Voice) ---
-function speak(text) {
-  if ("speechSynthesis" in window) {
-    // Stop any previous speech before starting a new one
-    speechSynthesis.cancel();
-
-    const utterance = new SpeechSynthesisUtterance(text);
-    speechSynthesis.speak(utterance);
-  }
 }
